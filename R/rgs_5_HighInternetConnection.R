@@ -53,13 +53,15 @@ execIndicatorHighInternetConnection <- function(){
   
   boundary@data$albers_sqm <- NULL
   
-  boundary@data$highInternetConn = 0.0
-  boundary@data$highInternetConn = with(boundary@data,broadband/total)
+  boundary@data$highint = 0.0
+  boundary@data$highint = with(boundary@data,broadband/total)
+  boundary@data = boundary@data[,c("sa2_name11","broadband","total","highint")]
+  
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 
   # the data layer will be only published one time, with various wms styles generated for selected attributes 
   publishedinfo = utils.publishSP2GeoServerWithMultiStyles(spobj=boundary, 
-                                                               attrname_vec=c("HighInternetConnection"),
+                                                               attrname_vec=c("highint"),
                                                                palettename_vec=c("Blues"), 
                                                                colorreverseorder_vec=c(FALSE), 
                                                                geomtype = "Geometry", 

@@ -62,8 +62,8 @@ globalGSCredentials = list()
 globalGSCredentials["gsRESTURL"] = "http://115.146.92.210:8080/geoserver" #change it to your own geoserver url
 globalGSCredentials["gsRESTUSER"] = "admin" #change it to your own geoserver username (admin role required) 
 globalGSCredentials["gsRESTPW"] = "123456" #change it to your own password 
-globalGSCredentials["gsWORKSPACENAME"] = "Test" #change it to your own unique workspace name, a new workspace will be automatically created if it does not exist  
-globalGSCredentials["gsDATASTORESNAME"] = "Testdb" #change it to your own unique datastore name, a new datastore will be automatically created if it does not exist 
+globalGSCredentials["gsWORKSPACENAME"] = "Modify" #change it to your own unique workspace name, a new workspace will be automatically created if it does not exist  
+globalGSCredentials["gsDATASTORESNAME"] = "Modifydb" #change it to your own unique datastore name, a new datastore will be automatically created if it does not exist 
 globalGSCredentials["tempDirPath"] = sprintf("%s/%s",getwd(),"tempdata")
 globalGSCredentials["wfsUrlTemplate"] = "%s/wfs?service=wfs&version=1.0.0&request=GetFeature&typeName=%s:%s&outputFormat=json" #DON'T MODIFY THIS LINE
 

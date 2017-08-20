@@ -54,15 +54,17 @@ execIndicatorPrivateVehicles <- function(){
   
   boundary@data$albers_sqm <- NULL
   
-  boundary@data$privateVehicles = 0.0
-  boundary@data$privateVehicles = with(boundary@data,total.x/total.y)
+  boundary@data$priveh = 0.0
+  boundary@data$priveh = with(boundary@data,total.x/total.y)
+  boundary@data = boundary@data[,c("sa2_name11","total.x","total.y","priveh")]
+  
   
   
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 
   # the data layer will be only published one time, with various wms styles generated for selected attributes 
   publishedinfo = utils.publishSP2GeoServerWithMultiStyles(spobj=boundary, 
-                                                               attrname_vec=c("PrivateVehicles"),
+                                                               attrname_vec=c("priveh"),
                                                                palettename_vec=c("Blues"), 
                                                                colorreverseorder_vec=c(FALSE), 
                                                                geomtype = "Geometry", 

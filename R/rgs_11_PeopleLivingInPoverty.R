@@ -47,13 +47,17 @@ execIndicatorPeoplelivingInPoverty <- function(){
   
   names(boundary@data) <- make.names(names(boundary@data))
   
-  boundary@data$peoplelivingInPoverty = 0.0
-  boundary@data$peoplelivingInPoverty <- with(boundary@data, (negative_income+nill_income+X1_10400+X10400_15599+X15600_20799+X15600_20799+X20800_31199)/total)
+  boundary@data$poverty = 0.0
+  boundary@data$poverty <- with(boundary@data, (negative_income+nill_income+X1_10400+X10400_15599+X15600_20799+X20800_31199)/total)
+  
+  boundary@data = boundary@data[,c("sa2_name11","negative_income","nill_income","X1_10400","X10400_15599","X15600_20799","X20800_31199","poverty")]
+  
+  
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 
   # the data layer will be only published one time, with various wms styles generated for selected attributes 
   publishedinfo = utils.publishSP2GeoServerWithMultiStyles(spobj=boundary, 
-                                                               attrname_vec=c("PeoplelivingInPoverty"),
+                                                               attrname_vec=c("poverty"),
                                                                palettename_vec=c("Blues"), 
                                                                colorreverseorder_vec=c(FALSE), 
                                                                geomtype = "Geometry", 

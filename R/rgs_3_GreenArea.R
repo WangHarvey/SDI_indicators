@@ -53,6 +53,7 @@ execIndicatorGreenArea <- function(){
   
   boundary@data$albers_sqm <- NULL
   
+  
   #pop_basenum = 100000 # green area index calculation base is for 100,000 persons
   
   # # # # # # # # # # # # # 
@@ -131,6 +132,9 @@ execIndicatorGreenArea <- function(){
   # assign calculated values back to sp_pop_prj@data. use as.numberic() to assure the values are numeric
   sp_boundary_prj@data[,"gaarea"] = as.numeric(result[,1])
   sp_boundary_prj@data[,"idxval"] = as.numeric(result[,2])
+  
+  sp_boundary_prj@data = sp_boundary_prj@data[,c("sa2_name11","total","gaarea","idxval")]
+  
   
   # ===================================
   # method 2: using normal for loop
