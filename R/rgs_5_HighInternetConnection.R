@@ -23,7 +23,8 @@ execIndicatorHighInternetConnection <- function(){
   # the follow two lines are for testing
   boundary_url = "http://115.146.93.46:8080/geoserver/Geographic_Boundaries/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Geographic_Boundaries:qld_sa2_2011_aust&outputFormat=JSON&cql_filter=gcc_code11=%273GBRI%27"
   internetConn_url = "http://115.146.93.152:8080/geoserver/group6/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=group6:queensland_internet_conn_use_aus_sa2_2011&outputFormat=application%2Fjson&cql_filter=gcc_code11=%273GBRI%27"
-  populationAge_url = "http://115.146.92.210:8080/geoserver/group5_Brisbane/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=group5_Brisbane:qld_population_by_age_aus_sa2_2011_ste_gccsa_info&outputFormat=JSON&cql_filter=gcc_code11=%273GBRI%27"
+  household_url = "http://115.146.92.210:8080/geoserver/group5_Brisbane/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=group5_Brisbane:qld_household_composition_aus_sa2_2011_ste_gccsa_info&outputFormat=JSON&cql_filter=gcc_code11=%273GBRI%27"
+  #populationAge_url = "http://115.146.92.210:8080/geoserver/group5_Brisbane/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=group5_Brisbane:qld_population_by_age_aus_sa2_2011_ste_gccsa_info&outputFormat=JSON&cql_filter=gcc_code11=%273GBRI%27"
   
   # load spatial object direct from geojson
   boundary = utils.loadGeoJSON2SP(boundary_url)
@@ -40,15 +41,15 @@ execIndicatorHighInternetConnection <- function(){
     return(FALSE)
   }
   
-  populationAge = utils.loadGeoJSON2DF(populationAge_url)
+  household = utils.loadGeoJSON2DF(household_url)
   # check if data layer can be successfully loaded
-  if(is.null(populationAge)){
-    utils.debugprint("fail to load data layer for populationAge")
+  if(is.null(household)){
+    utils.debugprint("fail to load data layer for household")
     return(FALSE)
   }
   # calculation
   mergedData=merge.data.frame(x=boundary@data, y=internetConn, by.x="sa2_main11", by.y="sa2_main11", sort=FALSE)
-  mergedDataAll=merge.data.frame(x=mergedData, y=populationAge, by.x="sa2_main11", by.y="sa2_main11", sort=FALSE)
+  mergedDataAll=merge.data.frame(x=mergedData, y=household, by.x="sa2_main11", by.y="sa2_main11", sort=FALSE)
   boundary@data=mergedDataAll
   
   boundary@data$albers_sqm <- NULL
