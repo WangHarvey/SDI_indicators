@@ -57,7 +57,7 @@ execIndicatorJobAvailability <- function(){
   boundary@data$job_av = 0.0
   boundary@data$job_av <- with(boundary@data, (employed_full_time+employed_part_time+employed_away_from_work+employed_hours_of_work_not_stated)/total)
   
-  boundary@data = boundary@data[,c("sa2_name11","employed_full_time","employed_part_time","employed_away_from_work","employed_hours_of_work_not_stated","total","job_av")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","employed_full_time","employed_part_time","employed_away_from_work","employed_hours_of_work_not_stated","total","job_av")]
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 
   # the data layer will be only published one time, with various wms styles generated for selected attributes 

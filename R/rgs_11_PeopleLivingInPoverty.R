@@ -50,7 +50,7 @@ execIndicatorPeoplelivingInPoverty <- function(){
   boundary@data$poverty = 0.0
   boundary@data$poverty <- with(boundary@data, (negative_income+nill_income+X1_10400+X10400_15599+X15600_20799+X20800_31199)/total)
   
-  boundary@data = boundary@data[,c("sa2_name11","negative_income","nill_income","X1_10400","X10400_15599","X15600_20799","X20800_31199","poverty")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","negative_income","nill_income","X1_10400","X10400_15599","X15600_20799","X20800_31199","poverty")]
   
   
   

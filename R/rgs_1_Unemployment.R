@@ -51,7 +51,7 @@ execIndicatorUnemployment <- function(){
   boundary@data$unemp = 0.0
   boundary@data$unemp <- with(boundary@data, unemployed_looking_for_work_persons/total) 
   
-  boundary@data = boundary@data[,c("sa2_name11","unemployed_looking_for_work_persons","total","unemp")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","unemployed_looking_for_work_persons","total","unemp")]
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 
   # the data layer will be only published one time, with various wms styles generated for selected attributes 

@@ -56,7 +56,7 @@ execIndicatorPrivateVehicles <- function(){
   
   boundary@data$priveh = 0.0
   boundary@data$priveh = with(boundary@data,total.x/total.y)
-  boundary@data = boundary@data[,c("sa2_name11","total.x","total.y","priveh")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","total.x","total.y","priveh")]
   
   
   

@@ -56,7 +56,7 @@ execIndicatorJobPerHousingRatio <- function(){
   
   boundary@data$jobper = 0.0
   boundary@data$jobper = with(boundary@data,total.x/total.y)
-  boundary@data = boundary@data[,c("sa2_name11","total.x","total.x","jobper")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","total.x","total.x","jobper")]
   
   
   

@@ -57,7 +57,7 @@ execIndicatorHomelessShelters <- function(){
   boundary@data$homesh = 0.0
   boundary@data$homesh = with(boundary@data,hostel_for_homeless_and_night_shelter/homeless_count)
   
-  boundary@data = boundary@data[,c("sa2_name11","hostel_for_homeless_and_night_shelter","homeless_count","homesh")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","hostel_for_homeless_and_night_shelter","homeless_count","homesh")]
   
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 

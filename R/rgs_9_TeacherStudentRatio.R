@@ -57,7 +57,7 @@ execIndicatorTeacherStudentRatio <- function(){
   
   boundary@data$teastd = 0.0
   boundary@data$teastd = with(boundary@data,(primary_school_teachers+secondary_school_teachers+middle_school_teachers)/full_time_student)
-  boundary@data = boundary@data[,c("sa2_name11","primary_school_teachers","secondary_school_teachers","middle_school_teachers","full_time_student","teastd")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","primary_school_teachers","secondary_school_teachers","middle_school_teachers","full_time_student","teastd")]
   
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 

@@ -56,7 +56,7 @@ execIndicatorAccessDoctorsRatio <- function(){
   
   boundary@data$accdoc = 0.0
   boundary@data$accdoc = with(boundary@data,(podiatrists+medical_practitioners_nfd+general_medical_practitioners+special_physicians+surgeons+other_medical_practitioners)/total.y)
-  boundary@data = boundary@data[,c("sa2_name11","podiatrists","medical_practitioners_nfd","general_medical_practitioners","special_physicians","surgeons","other_medical_practitioners","total.y","accdoc")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","podiatrists","medical_practitioners_nfd","general_medical_practitioners","special_physicians","surgeons","other_medical_practitioners","total.y","accdoc")]
   
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 

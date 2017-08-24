@@ -133,7 +133,7 @@ execIndicatorGreenArea <- function(){
   sp_boundary_prj@data[,"gaarea"] = as.numeric(result[,1])
   sp_boundary_prj@data[,"idxval"] = as.numeric(result[,2])
   
-  sp_boundary_prj@data = sp_boundary_prj@data[,c("sa2_name11","total","gaarea","idxval")]
+  sp_boundary_prj@data = sp_boundary_prj@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","total","gaarea","idxval")]
   
   
   # ===================================

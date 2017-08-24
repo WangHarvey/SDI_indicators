@@ -56,7 +56,7 @@ execIndicatorHighInternetConnection <- function(){
   
   boundary@data$highint = 0.0
   boundary@data$highint = with(boundary@data,broadband/total)
-  boundary@data = boundary@data[,c("sa2_name11","broadband","total","highint")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","broadband","total","highint")]
   
   
   # this example shows how to publish a geolayer by creating multiple wms styles on various attributes of the same data layer. 

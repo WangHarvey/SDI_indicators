@@ -48,7 +48,7 @@ execIndicatorFemaleEmployees <- function(){
   boundary@data$fememp = 0.0
   boundary@data$fememp <- with(boundary@data, (exmployed_full_time_female+employed_part_time_male)/total) 
   
-  boundary@data = boundary@data[,c("sa2_name11","exmployed_full_time_female","employed_part_time_male","total","fememp")]
+  boundary@data = boundary@data[,c("sa2_name11","sa3_name11","sa4_name11","gcc_name11.x","ste_name11.x","exmployed_full_time_female","employed_part_time_male","total","fememp")]
   
   
   
